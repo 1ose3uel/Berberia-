@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética y Barbería S & Y S | Tradición y Estilo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 400: '#FBBF24', 500: '#D4AF37', 600: '#B8860B' },
+                        dark: { 900: '#0a0a0a', 800: '#171717', 700: '#262626' }
+                    },
+                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay { background: linear-gradient(to right, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.4) 100%); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-300 font-sans antialiased">
+
+    <nav class="fixed w-full z-40 transition-all duration-300 bg-dark-900/95 backdrop-blur-sm border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-4">
+                        <img src="logo.jpg" alt="Logo S & Y S" class="h-16 w-16 object-contain rounded-full border border-gold-500 shadow-lg shadow-gold-500/20">
+                        <div class="flex flex-col">
+                            <span class="font-serif text-xl md:text-2xl font-bold text-white tracking-tighter leading-none">
+                                ESTÉTICA Y <span class="text-gold-500">BARBERÍA</span>
+                            </span>
+                            <span class="text-gold-500 font-serif text-lg font-bold tracking-[0.3em]">S & Y S</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-300 hover:text-gold-500 transition-colors font-medium">Inicio</a>
+                    <a href="#servicios" class="text-gray-300 hover:text-gold-500 transition-colors font-medium">Servicios</a>
+                    <a href="#galeria" class="text-gray-300 hover:text-gold-500 transition-colors font-medium">Galería</a>
+                    <button onclick="openModal()" class="bg-gold-500 hover:bg-gold-600 text-black px-6 py-2 rounded-sm font-bold uppercase text-xs tracking-widest transition-all shadow-lg">
+                        Reservar Cita
+                    </button>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gold-500"><i class="fa-solid fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-dark-700 p-4 text-center">
+            <a href="#inicio" class="block py-3 text-gray-300 mobile-link">Inicio</a>
+            <a href="#servicios" class="block py-3 text-gray-300 mobile-link">Servicios</a>
+            <a href="#contacto" class="block py-3 text-gray-300 mobile-link">Contacto</a>
+            <button onclick="openModal()" class="w-full mt-4 bg-gold-500 text-black py-3 rounded-sm font-bold uppercase text-xs tracking-widest">Reservar Cita</button>
+        </div>
+    </nav>
+
+    <section id="inicio" class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=2000" alt="Fondo Barbería" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <p class="text-gold-500 font-bold tracking-[0.4em] uppercase text-sm mb-4">Desde 2024</p>
+            <h1 class="text-5xl md:text-8xl font-serif font-bold text-white mb-6 leading-tight">
+                Tradición <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">y Estilo</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">Especialistas en el cuidado de tu imagen. Cortes de alta gama y atención personalizada en Martínez de la Torre.</p>
+            <button onclick="openModal()" class="bg-gold-500 hover:bg-gold-600 text-black px-10 py-4 rounded-sm font-bold uppercase tracking-widest transition-all transform hover:-translate-y-1 shadow-xl">
+                Agenda tu cita ahora
+            </button>
+        </div>
+    </section>
+
+    <section class="bg-dark-800 py-12 border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-dark-700">
+            <div class="p-4">
+                <i class="fa-solid fa-clock text-3xl text-gold-500 mb-4"></i>
+                <h3 class="text-white font-serif font-bold text-xl mb-1">Horario</h3>
+                <p class="text-gray-400">Lunes a Sábado: 9AM - 8PM</p>
+            </div>
+            <div class="p-4 pt-8 md:pt-4">
+                <i class="fa-solid fa-location-dot text-3xl text-gold-500 mb-4"></i>
+                <h3 class="text-white font-serif font-bold text-xl mb-1">Ubicación</h3>
+                <p class="text-gray-400 text-sm">Av. Niños Héroes 206, Col. Guadalupe Victoria</p>
+            </div>
+            <div class="p-4 pt-8 md:pt-4">
+                <i class="fa-solid fa-phone text-3xl text-gold-500 mb-4"></i>
+                <h3 class="text-white font-serif font-bold text-xl mb-1">Teléfono</h3>
+                <p class="text-gray-400">232 102 1424</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-24 bg-dark-900">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-4 italic text-gold-500">S & Y S</h2>
+                <p class="uppercase tracking-[0.3em] text-gray-500 text-sm">Servicios Premium</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10">
+                <div class="flex justify-between items-end border-b border-dark-700 pb-2">
+                    <span class="text-xl text-white font-serif italic">Corte Caballero</span>
+                    <span class="text-gold-500 font-bold">$150</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-dark-700 pb-2">
+                    <span class="text-xl text-white font-serif italic">Arreglo de Barba</span>
+                    <span class="text-gold-500 font-bold">$100</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-dark-700 pb-2">
+                    <span class="text-xl text-white font-serif italic">Corte y Barba</span>
+                    <span class="text-gold-500 font-bold">$220</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-dark-700 pb-2">
+                    <span class="text-xl text-white font-serif italic">Corte Infantil</span>
+                    <span class="text-gold-500 font-bold">$130</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-black py-16 border-t border-dark-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <img src="logo.jpg" alt="Logo" class="h-24 w-24 mx-auto mb-6 rounded-full border-2 border-gold-500 p-1">
+            <h2 class="text-2xl font-serif text-white mb-2">ESTÉTICA Y BARBERÍA S & Y S</h2>
+            <p class="text-gold-500 mb-8 tracking-widest italic">Martínez de la Torre, Ver.</p>
+            <div class="flex justify-center gap-6 mb-10">
+                <a href="tel:2321021424" class="h-12 w-12 rounded-full border border-dark-700 flex items-center justify-center hover:bg-gold-500 hover:text-black transition-all"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://wa.me/522321021424" class="h-12 w-12 rounded-full border border-dark-700 flex items-center justify-center hover:bg-gold-500 hover:text-black transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="text-gray-600 text-xs uppercase tracking-widest">© 2026 Estética y Barbería S & Y S - Diseño Profesional</p>
+        </div>
+    </footer>
+
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex justify-center items-center px-4">
+        <div class="bg-dark-800 border-2 border-gold-500/30 p-8 rounded-sm w-full max-w-md relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gold-500 text-2xl"><i class="fa-solid fa-xmark"></i></button>
+            <div class="text-center mb-6">
+                <img src="logo.jpg" class="h-16 w-16 mx-auto mb-2 rounded-full border border-gold-500">
+                <h2 class="text-2xl font-serif font-bold text-white uppercase tracking-tighter">Reservar Cita</h2>
+            </div>
+            <form onsubmit="sendWhatsApp(event)" class="space-y-4">
+                <input type="text" id="wa-name" required class="w-full bg-dark-900 border border-dark-700 px-4 py-3 text-white outline-none focus:border-gold-500" placeholder="¿Cuál es tu nombre?">
+                <select id="wa-service" class="w-full bg-dark-900 border border-dark-700 px-4 py-3 text-white outline-none focus:border-gold-500">
+                    <option>Corte Caballero</option>
+                    <option>Arreglo de Barba</option>
+                    <option>Corte y Barba</option>
+                    <option>Corte Infantil</option>
+                </select>
+                <input type="text" id="wa-date" required class="w-full bg-dark-900 border border-dark-700 px-4 py-3 text-white outline-none focus:border-gold-500" placeholder="¿Para qué día y hora?">
+                <button type="submit" class="w-full bg-[#25D366] text-white font-bold py-4 rounded-sm flex items-center justify-center gap-3 hover:bg-[#1fa851] transition-colors">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> CONFIRMAR POR WHATSAPP
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.onclick = () => menu.classList.toggle('hidden');
+
+        function openModal() { document.getElementById('bookingModal').classList.remove('hidden'); }
+        function closeModal() { document.getElementById('bookingModal').classList.add('hidden'); }
+
+        function sendWhatsApp(event) {
+            event.preventDefault();
+            const name = document.getElementById('wa-name').value;
+            const service = document.getElementById('wa-service').value;
+            const date = document.getElementById('wa-date').value;
+            const phone = "522321021424";
+            const text = `¡Hola S & Y S! Soy ${name}, me gustaría agendar un ${service} para el día: ${date}. ¿Tienen espacio?`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
